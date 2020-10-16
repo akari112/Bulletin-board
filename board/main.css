@@ -1,0 +1,282 @@
+@charset "utf-8";
+
+body {
+  background-color: rgba(176, 212, 226, 0.89);
+  text-align: center;
+  margin: 0;
+}
+/* ヘッダー */
+.head {
+  background-color: #fff;
+  height: 80px;
+}
+.head h1{
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(44, 44, 51);
+  font-size: 35px;
+  font-family: sans-serif;
+  margin: 0 auto;
+  line-height: 80px;
+}
+.head1 h1{
+  color: #fff;
+  font-size: 9.5vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow:1px 1px 2px black;
+  margin: 100px auto 30px;
+}
+.log_btn {
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  display: block;
+  background-color: steelblue;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 16px;
+}
+.cha_btn {
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  display: block;
+  background-color: steelblue;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 16px;
+}
+.log_btn:hover,
+.cha_btn:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* ログイン画面 */
+.form_content {
+  width: 90vw;
+  margin: 0 auto;
+}
+label {
+  color: rgb(71, 68, 68);
+}
+.lab {
+  margin: 0 auto;
+  width: 350px;
+  margin-top: 10px;
+}
+.lab1 {
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+}
+#mail,
+#pass,
+#npass1,
+#npass2 {
+  width: 350px;
+  height: 27px;
+  margin: 0 auto 5px;
+}
+.error {
+  color: red;
+  margin: 0;
+}
+#lead p{
+  color: rgb(71, 68, 68);
+  margin: 20px auto;
+}
+.btn {
+  width: 350px;
+  height: 40px;
+  padding: 9px 100px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid skyblue;
+  margin-top: 5px;
+}
+.btn:hover{
+  background-color: skyblue;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/* メイン画面 */
+.thread {
+  height: 70px;
+  display: flex;
+  text-align: center;
+}
+.fle {
+  flex: 1;
+  line-height: 70px;
+  text-decoration: none;
+  background-color: skyblue;
+  color: #fff;
+  font-size: 22px;
+}
+.fle:hover{
+  background-color: rgb(45, 175, 226);
+}
+.active {
+  background-color: rgb(45, 175, 226);
+}
+.post_btn{
+  width: 200px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid rgba(135, 207, 235, 0.103);
+}
+.post_btn:hover{
+  background-color: skyblue;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.search {
+  text-align: right;
+  padding: 12px 30px;
+}
+.inp {
+  height: 22px;
+  width: 220px;
+}
+hr {
+  margin: 0;
+}
+.paging {
+ background-color: #fff;
+ padding: 20px auto;
+ height: 40px;
+ line-height: 40px;
+ margin: 0;
+}
+.messages {
+  background-color: #fff;
+  margin: 5px 80px;
+  border-radius: 10px;
+}
+.msg {
+  padding: 20px;
+}
+.top {
+  display: flex;
+  height: 70px;
+}
+.top p {
+  margin: 0 5px;
+}
+.m_img {
+  flex: 0 0 70px;
+}
+.side {
+  flex: auto;
+}
+.side_top {
+  display: flex;
+}
+.side_btm {
+  display: flex;
+}
+.btm {
+  text-align: left;
+  margin-left: 17px;
+}
+.btm p {
+  margin: 5px;
+}
+/* 編集画面 */
+.edit {
+  margin-top: 50px;
+}
+.edi_title {
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+}
+.edi_ok {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 400px;
+  margin: 0 auto;
+}
+.edi_ok p{
+  margin:20px auto;
+  padding: 15px;
+}
+/* 検索結果 */
+.result {
+  background-color: #fff;
+  height: 60px;
+}
+.result h3{
+  margin: 0 auto;
+  line-height: 60px;
+}
+.top1 {
+  display: flex;
+  margin: 0 5px;
+}
+.btm1 {
+  display: flex;
+  margin: 5px;
+} 
+.top1 p {
+  margin: 5px 15px 5px 0px;
+}
+.searchs {
+  background-color: #fff;
+  margin: 5px 50px;
+}
+/* 投稿詳細画面 */
+.v_top {
+  display: flex;
+  height: 100px;
+}
+.view {
+  width: 400px;
+  margin: 40px auto;
+}
+.v_img {
+  margin: 5px;
+  flex: 0 0 100px;
+}
+.v_pro p{
+  flex: auto;
+  margin-left: 10px;
+}
+/* スレッド作成画面 */
+#ti {
+  width: 350px;
+  height: 27px;
+  margin: 0 auto 5px;
+}
+#con {
+  width: 350px;
+}
+.btns{
+  margin: 10px auto;
+}
+.rebtn{
+  background-color: skyblue;
+  border: 1px solid skyblue;
+  border-radius: 5px;
+  width: 200px;
+  height: 33px;
+}
+.okbtn{
+  background-color: royalblue;
+  border: 1px solid royalblue;
+  border-radius: 5px;
+  width: 200px;
+  height: 33px;
+  color: #fff;
+}
+.btn:hover,
+.okbtn:hover,
+.rebtn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
