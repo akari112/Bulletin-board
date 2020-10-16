@@ -94,7 +94,7 @@ $threads->execute();
             ?>)</span></a></p>
 
             <?php if($_SESSION['id'] === $thread['user']):?>
-              <p>[<a href="thread_del.php?id=<?php echo htmlspecialchars($thread['id'],ENT_QUOTES)?>"
+              <p>[<a href="thread_del.php?tdid=<?php echo htmlspecialchars($thread['id'],ENT_QUOTES)?>"
               style="color: #F33;">削除</a>]</p>
             <?php endif;?>
           </div>
