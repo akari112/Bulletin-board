@@ -28,7 +28,7 @@ if(isset($_SESSION['id']) && $_SESSION['time'] + 7200 > time()){
 <header>
 	<div class="head">
 		<h1>みんなの掲示板</h1>
-    <button class="log_btn" onclick="location.href='logout.php'">ログアウト</button>
+    <button class="log_btn" onclick="location.href='../logout.php'">ログアウト</button>
     <button class="cha_btn" onclick="location.href='change/mypage.php'">会員情報変更</button>
   </div>
 </header>
