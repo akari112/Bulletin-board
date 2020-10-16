@@ -3,18 +3,36 @@ session_start();
 require('db.php');
 
 if(isset($_SESSION['id'])){
-  $did = $_REQUEST['did'];
-  $id = $_REQUEST['id'];
+  if(!empty($_REQUEST['did']) || !empty($_REQUEST['tdid']) || !empty($_REQUEST['id'])){
+    @$did = $_REQUEST['did'];
+    @$tdid = $_REQUEST['tdid'];
+    @$id = $_REQUEST['id'];
 
-  $comments = $db->prepare('SELECT * FROM posts WHERE id=?');
-  $comments->execute(array($did));
-  $comment = $comments->fetch();
+    if(isset($_REQUEST['did'])){
+      $comments = $db->prepare('SELECT * FROM posts WHERE id=?');
+      $comments->execute(array($did));
+      $comment = $comments->fetch();
+    
+      if($comment['user_id'] === $_SESSION['id']){
+        $del = $db->prepare('DELETE FROM posts WHERE id=?');
+        $del->execute(array($did));
+      }
+      header("Location: main.php?id={$id}");
+      exit();
+    }elseif(isset($_REQUEST['tdid'])){
 
-  if($comment['user_id'] === $_SESSION['id']){
-    $del = $db->prepare('DELETE FROM posts WHERE id=?');
-    $del->execute(array($did));
+      $threads = $db->prepare('SELECT * FROM threads WHERE id=?');
+      $threads->execute(array($tdid));
+      $thread = $threads->fetch();
+    
+      if($thread['user'] === $_SESSION['id']){
+        $tdel = $db->prepare('DELETE FROM threads WHERE id=?');
+        $tdel->execute(array($tdid));
+      }
+      header("Location: thread/threads.php");
+      exit();
+    }
   }
 }
-header("Location: main.php?id={$id}");
-exit();
+
 ?>
