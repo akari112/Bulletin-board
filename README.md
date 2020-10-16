@@ -1,9 +1,6 @@
 # Bulletin-board
 It is a web bulletin board application that allows you to register as a member.
 
-# DEMO
-
-
 # Features
 * Member registration function
 * Member information change function
