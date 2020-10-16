@@ -9,7 +9,6 @@ if(!isset($_SESSION['join'])){
 }
 
 if(!empty($_POST)){	
-	if(!empty($_POST['']))
 	$stmt = $db->prepare('INSERT INTO user SET name=?, email=?, pass=?, picture=?, created=NOW()');
 	$stmt->execute(array(
 		$_SESSION['join']['name'],
