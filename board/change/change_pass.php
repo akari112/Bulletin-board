@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('X-FRAME-OPTIONS:DENY');
 require('../db.php');
 
 $users = $db->prepare('SELECT * FROM user WHERE id=?');
