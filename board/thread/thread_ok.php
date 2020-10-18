@@ -1,5 +1,6 @@
 <?php
 require('../db.php');
+header('X-FRAME-OPTIONS:DENY');
 session_start();
 
 //改行
