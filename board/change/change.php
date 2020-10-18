@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('../db.php');
+header('X-FRAME-OPTIONS:DENY');
 
 if(isset($_SESSION['id']) && $_SESSION['time'] + 7200 > time()){
   $_SESSION['time'] = time();
