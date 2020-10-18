@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require('../db.php');
+header('X-FRAME-OPTIONS:DENY');
 //セッションidがあり、1時間以上経過無し
 if(isset($_SESSION['id']) && $_SESSION['time'] + 7000 > time()){
   $_SESSION['time'] = time();
