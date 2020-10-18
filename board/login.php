@@ -1,6 +1,7 @@
 <?php
 require('db.php');
 session_start();
+header('X-FRAME-OPTIONS:DENY');
 
 if(!empty($_COOKIE['email']) && $_COOKIE['email'] !== ''){
   $email = $_COOKIE['email'];
