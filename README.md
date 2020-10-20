@@ -19,9 +19,9 @@ It is a web bulletin board application that allows you to register as a member.
 * mySQL
 * Virtual Studio Code
 
-# Note
+# URL
 
-not a responsive design
+* https://pgltypinggame.sakura.ne.jp/board/login.php
 
 # Author
 
