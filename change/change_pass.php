@@ -1,23 +1,31 @@
 <?php
 session_start();
-require('../db.php');
+require('../.db.php');
 header('X-FRAME-OPTIONS:DENY');
 
 $users = $db->prepare('SELECT * FROM user WHERE id=?');
 $users->execute(array($_SESSION['id']));
 $user = $users->fetch();
 
-if(!empty($_POST)){
+$error = array();
+
+if(!empty($_POST) && isset($_POST)){
+  if(empty($_POST['pass']) || empty($_POST['npass1']) || empty($_POST['npass2'])){
+    $error['password'] = 'blank';
+  }
   if($user['pass'] !== sha1($_POST['pass'])){
     $error['password'] = 'miss';
-  }elseif($_POST['npass1'] !== $_POST['npass2']){
+  }
+  if($_POST['npass1'] !== $_POST['npass2']){
     $error['password'] = 'not';
-  }elseif($user['pass'] === sha1($_POST['pass']) && $_POST['npass1'] === $_POST['npass2']){
-    $_SESSION['change']['pass'] = sha1($_POST['npass1']);
-    header('Location: change_con.php');
-    exit();
+  }
+  if(empty($error) && $user['pass'] === sha1($_POST['pass']) && $_POST['npass1'] === $_POST['npass2']){
+     $_SESSION['change']['pass'] = sha1($_POST['npass1']);
+     header('Location: change_con.php');
+     exit();
   }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -47,8 +55,8 @@ if(!empty($_POST)){
        <label class="lab1" for="pass">現在のパスワード</label>
       </div><br>
       <input type="password" name="pass" id="pass" size="10" maxlength="20"><br>
-        <?php if(!empty($type['error']) && $error['password'] === 'miss'):?>
-          <p>*パスワードが間違っています</p>
+        <?php if(isset($error) && $error['password'] === 'miss'):?>
+          <p class="error">*パスワードが間違っています</p>
         <?php endif;?>
         <br><hr>
       <div class="lab">
@@ -60,8 +68,11 @@ if(!empty($_POST)){
         <label class="lab1" for="npass2">新しいパスワード(再入力)</label>
       </div><br>
       <input type="password" name="npass2" id="npass2" size="10" maxlength="20"><br>
-        <?php if(!empty($type['error']) && $error['password'] === 'not'):?>
-          <p>*パスワードが同じではありません</p>
+        <?php if(isset($error) && $error['password'] === 'not'):?>
+          <p class="error">*パスワードが同じではありません</p>
+        <?php endif;?>
+        <?php if(isset($error) && $error['password'] === 'blank'):?>
+          <p class="error">*入力してください</p>
         <?php endif;?>
         <br><hr><br>
       <button class="btn" type="submit">パスワードを変更する</button><br><br>
