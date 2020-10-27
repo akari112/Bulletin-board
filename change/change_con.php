@@ -68,7 +68,7 @@ $_SESSION['token'] = $token;
     <div class="btns"><input class="okbtn" type="submit" value="登録する"/></div><br>
   </form>
   </div><br>
-  <button class="post_btn" onclick="location.href='../mypage.php'">戻る</button>
+  <button class="post_btn" onclick="location.href='mypage.php'">戻る</button>
 
 </body>
 </html>
