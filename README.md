@@ -21,11 +21,7 @@ It is a web bulletin board application that allows you to register as a member.
 
 # URL
 
-* https://pgltypinggame.sakura.ne.jp/board/login.php
-
-* email:demo1@com
-* pass:1111
-* you can login
+* https://nanndemo.sakuratan.com/board/login.php
 
 # Author
 
